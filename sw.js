@@ -1,4 +1,4 @@
-var CACHE='captain-asher-v13';
+var CACHE='captain-asher-v14';
 var ASSETS=['./','./index.html','./manifest.webmanifest','./icon-180.png'];
 self.addEventListener('install',function(e){self.skipWaiting();e.waitUntil(caches.open(CACHE).then(function(c){return c.addAll(ASSETS)}))});
 self.addEventListener('activate',function(e){e.waitUntil(caches.keys().then(function(k){return Promise.all(k.map(function(x){if(x!==CACHE)return caches.delete(x)}))}).then(function(){return self.clients.claim()}))});
