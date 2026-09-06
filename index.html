@@ -221,13 +221,14 @@ i.beginPath(),i.arc(7.4*f,-11.4*f,2.6*f,.2,Math.PI-.6),i.stroke();
 i.beginPath(),i.arc(11.8*f,-11.4*f,2.6*f,.6,Math.PI-.2),i.stroke();
 i.restore()};
 /* ---- new bullet: yellow electric bolt ---- */
-_l.push({n:"Yellow Bolt",col:"#ffe14d",cost:0,icon:"bolt"});var azYB=_l.length-1;
+_l.push({n:"Yellow Bolt",col:"#ffe14d",cost:0,icon:"bolt"});var azYB=_l.length-1;try{[azBoltI,azYB].forEach(function(k){W.powers.indexOf(k)<0&&W.powers.push(k)}),G()}catch(e2){}
 var azGeY=ge;ge=function(l){if(l.pw!==azYB)return azGeY(l);
 var e="#ffe14d",t=azShG[e];t||((t=i.createRadialGradient(0,0,2,0,0,30)).addColorStop(0,e),t.addColorStop(.35,"rgba(255,255,255,0.35)"),t.addColorStop(1,"rgba(255,255,255,0)"),azShG[e]=t);
 i.save();i.globalAlpha=.6;i.translate(l.x,l.y);i.fillStyle=t;i.fillRect(-30,-30,60,60);i.restore();
-i.save();i.globalAlpha=.35;i.fillStyle=e;for(var a=1;a<=3;a++)g(l.x-l.vx*a*.9,l.y-l.vy*a*.9,10-2.2*a),i.fill();i.restore();
+if(isFinite(l.vx)&&isFinite(l.vy)){i.save();i.globalAlpha=.35;i.fillStyle=e;for(var a=1;a<=3;a++)g(l.x-l.vx*a*.9,l.y-l.vy*a*.9,10-2.2*a),i.fill();i.restore()}
 i.save();i.translate(l.x,l.y);i.rotate(.3*l.spin);
-Al(1,0,0,18,"#ffe14d");P(3.2,"#8a6b1d");Al(1,0,0,10,"#fff6c9");i.restore()};
+i.save();i.globalAlpha=.4;Al(1,0,0,25,"#fff35c");i.restore();
+Al(1,0,0,18,"#ffe600");P(1.4,"#e0a800");Al(1,0,0,7,"#fffde0");i.restore()};
 }catch(azX){}})();
 </script>
 </body>
